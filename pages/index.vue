@@ -22,9 +22,9 @@
         </div>
     </section>
     <section class="container mx-auto mt-[5rem]">
-        <div class="flex flex-wrap -m-8 divide-y md:divide-x md:divide-y-0 divide-[#B5C0FF]/10">
-            <div class="w-full md:w-1/3 p-8">
-                <div class="max-w-xs mx-auto text-center">
+        <div class="flex flex-wrap -m-8 ">
+            <div class="w-full md:w-1/3 p-8 border-b md:border-b-0 md:border-r border-[#B5C0FF]/10">
+                <div class="max-w-xs mx-auto text-center flex flex-col justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-3 h-12 w-12" viewBox="0 0 24 24" stroke-width="1.5" stroke="#8793FF" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <path d="M3 19l18 0" />
@@ -49,7 +49,7 @@
                     <p class="mb-8 text-white text-opacity-80 font-thin">We consider all the drivers of change gives you the blocks &amp; components you need to change to create.</p>
                 </div>
             </div>
-            <div class="w-full md:w-1/3 p-8">
+            <div class="w-full md:w-1/3 p-8 border-t md:border-t-0 md:border-l border-[#B5C0FF]/10">
                 <div class="max-w-xs mx-auto text-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-3 h-12 w-12" viewBox="0 0 24 24" stroke-width="1.5" stroke="#8793FF" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -66,22 +66,34 @@
             </div>
         </div>
     </section>
-    <section class="container mx-auto mt-[5rem]">
-    </section>
-    <!-- <footer>
-        <div class="container mx-auto relative overflow-hidden">
-            <div class="flex items-center justify-between px-4 mt-6 pb-12">
-                <span class="text-white text-lg md:text-xl font-bold tracking-wide">HackWeekly</span>
-                <div class="text-white flex items-center gap-12 font-normal">
-                    <a class="text-sm hover:text-gray-200 transition ease-in-out duration-150" href="" target="blank">Discord</a>
-                    <a class="text-sm hover:text-gray-200 transition ease-in-out duration-150" href="" target="blank">GitHub</a>
+    <section class="container mx-auto mt-48 px-4">
+        <div class="flex flex-col justify-center items-center">
+            <h2 class="text-white font-semibold text-3xl md:text-4xl lg:text-5xl">Current project</h2>
+            <div class="text-white px-2 text-2xl leading-none bg-darkBlue h-14 flex items-center mt-10">
+                <span>Timezone Sync</span>
+            </div>
+            <span class="text-white text-opacity-80 text-lg mt-8">Time remaining</span>
+            <div class="w-full md:w-1/3 border-t border-[#B5C0FF]/10 flex justify-center mt-8"></div>
+            <div class="flex flex-col md:flex-row justify-center items-center mt-8 gap-14">
+                <div v-for="count in countdown" :key="count.time" class="flex flex-col text-center">
+                    <span class="text-white text-4xl font-semibold">{{ count.time }}</span>
+                    <span class="text-white text-opacity-80 text-lg">{{ count.units }}</span>
                 </div>
             </div>
         </div>
-    </footer> -->
+    </section>
+    
 </template>
 <script setup>
-    definePageMeta({
-        layout: "home",
-    });
+definePageMeta({
+    layout: "home",
+});
+
+const countdown = ref([
+    {time: '14', units: 'days'    }, 
+    {time: '13', units: 'hours'   }, 
+    {time: '03', units: 'minutes' }, 
+    {time: '28',  units: 'seconds' }
+])
+
 </script>
